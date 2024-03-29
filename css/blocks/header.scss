@@ -1,0 +1,121 @@
+@import "./_variables";
+
+.header {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1140px;
+  padding: 26px 20px;
+  margin: 0 auto;
+	margin-bottom: 40px;
+  z-index: 10;
+}
+
+.header__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.header__nav,
+.header__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 24px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0;
+}
+
+.header__item {
+  list-style: none;
+}
+
+.header__link {
+  color: $white;
+  font-size: 18px;
+  line-height: 25px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &:hover {
+    opacity: 0.5;
+  }
+
+  &::before {
+    content: "";
+  }
+}
+
+.header__right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 48px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.header__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.header__btn {
+  font-size: 14px;
+  line-height: 140%;
+  padding: 14px 17px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 11px;
+	text-transform: none;
+}
+
+.header__btn--orange {
+  border: 1px solid #ea7024;
+}
+
+.header-location {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-location__text {
+  color: $white;
+  font-size: 14px;
+  line-height: 140%;
+}
+
+.header-location__border {
+  background-color: rgba($white, 0.3);
+  width: 1px;
+  height: 24px;
+}

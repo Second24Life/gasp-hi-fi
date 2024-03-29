@@ -1,0 +1,34 @@
+.gallery {
+  display: grid;
+  place-self: center;
+  width: 100%;
+  perspective: 1500px;
+  position: relative;
+  z-index: 10;
+}
+.gallery__items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  width: 100%;
+  max-width: 1200px;
+  padding: 1rem;
+  transform-style: preserve-3d;
+}
+.gallery__item {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  display: grid;
+  place-self: center;
+  aspect-ratio: 1.5;
+}
+.gallery__item-inner {
+  width: 100%;
+  height: 100%;
+  max-width: 800px;
+  max-height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}

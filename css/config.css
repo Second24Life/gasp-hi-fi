@@ -1,0 +1,114 @@
+@font-face {
+  font-family: "roboto-oh5";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/roboto-regular-webfont.woff2") format("woff2");
+}
+@font-face {
+  font-family: "roboto-oh5";
+  font-style: italic;
+  font-weight: 400;
+  src: url("../fonts/roboto-italic-webfont.woff2") format("woff2");
+}
+@font-face {
+  font-family: "roboto-oh5";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/roboto-bold-webfont.woff2") format("woff2");
+}
+@font-face {
+  font-family: "roboto-oh5";
+  font-style: italic;
+  font-weight: 700;
+  src: url("../fonts/roboto-bolditalic-webfont.woff2") format("woff2");
+}
+::-moz-placeholder {
+  color: #666;
+}
+::placeholder {
+  color: #666;
+}
+
+::-moz-selection {
+  background-color: #ECFB5C;
+  color: #fff;
+}
+
+::selection {
+  background-color: #ECFB5C;
+  color: #fff;
+}
+
+input, textarea {
+  outline: none;
+}
+input:focus:required:invalid, textarea:focus:required:invalid {
+  border-color: red;
+}
+input:required:valid, textarea:required:valid {
+  border-color: green;
+}
+
+body {
+  font-family: roboto-oh5, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  color: #000;
+  min-width: 320px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+section {
+  background-color: #0C0C0C;
+}
+
+.btn {
+  position: relative;
+  text-transform: uppercase;
+  padding: 15px 25px;
+  border: 1px solid rgba(236, 251, 92, 0.1);
+  color: #fff;
+  background: none;
+  font-size: 1rem;
+  transition: all 0.5s ease;
+}
+.btn::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  transition: width 0.5s ease;
+}
+.btn.btn__main {
+  background-color: rgba(236, 251, 92, 0.05);
+}
+.btn.btn__main:hover {
+  color: #0C0C0C;
+}
+.btn.btn__main:hover::before {
+  width: 100%;
+  z-index: -1;
+}
+.btn.btn__main::before {
+  background-color: #ECFB5C;
+}
+.btn.btn__primary {
+  background-color: rgba(237, 71, 0, 0.05);
+  border: 1px solid rgba(237, 71, 0, 0.1);
+  color: #000;
+  z-index: 1;
+}
+.btn.btn__primary:hover {
+  color: #fff;
+}
+.btn.btn__primary:hover::before {
+  width: 100%;
+  z-index: -1;
+}
+.btn.btn__primary::before {
+  background-color: #ED4700;
+}

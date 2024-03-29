@@ -1,0 +1,63 @@
+@import './variables';
+
+.footer {
+  background-color: $bg-secondary;
+  margin-top: 100vh;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__wrapper {
+    max-width: 1240px;
+    width: 100%;
+    max-height: 350px;
+    height: 100%;
+    padding: 60px 0 74px;
+    border-top: 1px solid rgba($color: $black, $alpha: .3);
+    border-bottom: 1px solid rgba($color: $black, $alpha: .3);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  &__content {
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    // flex: 1 1 70%;
+  }
+
+  h2 {
+    color: $primary-color;
+    font-size: 48px;
+    line-height: 67px;
+    text-align: start;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  &__description {
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba($color: $black, $alpha: .8);
+    margin-bottom: 50px;
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 34px;
+    font-weight: 700;
+  }
+
+  &__menu,
+  &__contacts {
+    padding-left: 75px;
+    border-left: 1px solid rgba($color: $black, $alpha: .3);
+    height: 100%;
+  }
+}
