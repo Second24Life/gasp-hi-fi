@@ -51,7 +51,7 @@
 .footer__title {
   font-size: 24px;
   line-height: 34px;
-  font-weight: 700;
+  font-weight: 600;
 }
 .footer__menu, .footer__contacts {
   padding-left: 75px;
@@ -175,6 +175,7 @@
   padding-right: 3rem;
   white-space: nowrap;
   font-size: 120px;
+  font-weight: 600;
   line-height: 168px;
   animation-name: rtl;
   animation-iteration-count: infinite;

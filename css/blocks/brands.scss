@@ -46,8 +46,9 @@
 
   &__title {
     font-size: 44px; 
-    color: $white;
     line-height: 62px;
+    font-weight: 600;
+    color: $white;
     text-transform: uppercase;
     span {
       // color: $main-color;
@@ -77,7 +78,10 @@
     }
 
     &-text {
-      color: $black;
+      color: $bg-main;
+      font-size: 37px;
+      line-height: 52px;
+      font-weight: 600;
     }
   }
 

@@ -1,26 +1,26 @@
 @font-face {
-  font-family: "roboto-oh5";
+  font-family: "AtypDisplay";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/roboto-regular-webfont.woff2") format("woff2");
+  src: url("../fonts/AtypDisplay-Regular.ttf") format("truetype");
 }
 @font-face {
-  font-family: "roboto-oh5";
-  font-style: italic;
-  font-weight: 400;
-  src: url("../fonts/roboto-italic-webfont.woff2") format("woff2");
+  font-family: "AtypDisplay";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/AtypDisplay-Medium.ttf") format("truetype");
 }
 @font-face {
-  font-family: "roboto-oh5";
+  font-family: "AtypDisplay";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/AtypDisplay-Semibold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "AtypDisplay";
   font-style: normal;
   font-weight: 700;
-  src: url("../fonts/roboto-bold-webfont.woff2") format("woff2");
-}
-@font-face {
-  font-family: "roboto-oh5";
-  font-style: italic;
-  font-weight: 700;
-  src: url("../fonts/roboto-bolditalic-webfont.woff2") format("woff2");
+  src: url("../fonts/AtypDisplay-Bold.ttf") format("truetype");
 }
 ::-moz-placeholder {
   color: #666;
@@ -50,7 +50,7 @@ input:required:valid, textarea:required:valid {
 }
 
 body {
-  font-family: roboto-oh5, sans-serif;
+  font-family: "AtypDisplay", sans-serif;
   font-size: 16px;
   line-height: 1.65;
   color: #000;
@@ -79,6 +79,7 @@ body {
 .btn svg {
   width: 20px;
   height: 20px;
+  transition: all 0.5s ease;
 }
 .btn::before {
   content: "";
@@ -93,8 +94,17 @@ body {
 .btn.btn__main {
   background-color: rgba(236, 251, 92, 0.05);
 }
+.btn.btn__main svg * {
+  fill: #fff;
+}
 .btn.btn__main:hover {
   color: #04211F;
+}
+.btn.btn__main:hover svg {
+  transform: rotate(45deg);
+}
+.btn.btn__main:hover svg * {
+  fill: #04211F;
 }
 .btn.btn__main:hover::before {
   width: 100%;
@@ -108,9 +118,6 @@ body {
   border: 1px solid rgba(237, 71, 0, 0.1);
   color: #000;
   z-index: 1;
-}
-.btn.btn__primary svg {
-  transition: all 0.5s ease;
 }
 .btn.btn__primary:hover {
   color: #fff;

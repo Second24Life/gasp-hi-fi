@@ -100,13 +100,34 @@
               Available
             </button>
             <button class="btn btn__main header__btn" href="#footer">
-              Let’s Talk
+              Let’s talk
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="26"
+                height="26"
+                viewBox="0 0 26 26"
+                fill="none"
+              >
+                <path
+                  d="M5.8293 18.4289L7.0293 19.6289L19.0293 7.6289L17.8293 6.4289L5.8293 18.4289Z"
+                  fill="#04211F"
+                />
+                <path
+                  d="M17.3936 6.36387V19.0918H19.0906V6.36387H17.3936Z"
+                  fill="#04211F"
+                />
+                <path
+                  d="M6.36328 6.36447V8.06152H19.0912V6.36447H6.36328Z"
+                  fill="#04211F"
+                />
+              </svg>
             </button>
           </div>
         </div>
       </div>
     </header>
 
+    <!-- Hero -->
     <div class="sticky--container">
       <section class="hero section--full_height is--sticky is--mobile">
         <div class="hero__overlay"></div>
@@ -128,9 +149,7 @@
         </div>
         <div class="hero__images__wrapper">
           <img class="hero__images" src="images/dist/hero_1.jpg" alt="" />
-          <!-- <div style="background-image: url('images/dist/hero_1.jpg')">
-            <img class="hero__images" src="images/dist/hero_1.jpg" alt="" />
-          </div> -->
+          <canvas width="280" height="350" style="z-index: 10; position: relative;"></canvas>
         </div>
         <div class="hero__empty"></div>
         <div class="hero__scroll-down">
@@ -150,9 +169,10 @@
           </svg>
         </div>
       </section>
-      <div class="hero sticky--spacer"></div>
+      <div class="sticky--spacer xxl"></div>
     </div>
 
+    <!-- Intro -->
     <div class="sticky--container">
       <section
         class="intro section--full_height is--sticky overflow--off is--mobile"
@@ -184,6 +204,7 @@
     <section class="section--full_height is--relative is--tranparent"></section>
     <section class="section--full_height is--relative is--tranparent"></section>
 
+    <!-- Gallery -->
     <section class="gallery section--full_height is--centered">
       <div class="gallery__items">
         <div class="gallery__item">
@@ -224,91 +245,243 @@
       </div>
     </section>
 
-    <section class="works section--full_height is--centered">
-      <div class="works__items">
-        <div class="works__item">
-          <picture>
-            <source srcset="images/dist/work_1.webp" type="image/webp" />
-            <img src="images/dist/work_1.png" alt="work" />
-          </picture>
-        </div>
-        <div class="works__item">
-          <picture>
-            <source srcset="images/dist/work_2.webp" type="image/webp" />
-            <img src="images/dist/work_2.png" alt="work" />
-          </picture>
-        </div>
-        <div class="works__item">
-          <picture>
-            <source srcset="images/dist/work_3.webp" type="image/webp" />
-            <img src="images/dist/work_3.png" alt="work" />
-          </picture>
-        </div>
-        <div class="works__item">
-          <picture>
-            <source srcset="images/dist/work_4.webp" type="image/webp" />
-            <img src="images/dist/work_4.png" alt="work" />
-          </picture>
-        </div>
-        <div class="works__item">
-          <picture>
-            <source srcset="images/dist/work_5.webp" type="image/webp" />
-            <img src="images/dist/work_5.png" alt="work" />
-          </picture>
-        </div>
-        <div class="works__item">
-          <picture>
-            <source srcset="images/dist/work_6.webp" type="image/webp" />
-            <img src="images/dist/work_6.png" alt="work" />
-          </picture>
-        </div>
-      </div>
-      <div class="works__navbar">
-        <div class="works__logos">
-          <div class="works__logo">
+    <!-- Works -->
+    <!-- <div class="sticky--container">
+      <section class="works">
+        <div class="works__items">
+          <div class="works__item">
             <picture>
-              <source srcset="images/dist/work_logo_1.webp" type="image/webp" />
-              <img src="images/dist/work_logo_1.png" alt="" />
+              <source srcset="images/dist/work_1.webp" type="image/webp" />
+              <img src="images/dist/work_1.png" alt="work" />
             </picture>
           </div>
-          <div class="works__logo">
+          <div class="works__item">
             <picture>
-              <source srcset="images/dist/work_logo_2.webp" type="image/webp" />
-              <img src="images/dist/work_logo_2.png" alt="" />
+              <source srcset="images/dist/work_2.webp" type="image/webp" />
+              <img src="images/dist/work_2.png" alt="work" />
             </picture>
           </div>
-          <div class="works__logo">
+          <div class="works__item">
             <picture>
-              <source srcset="images/dist/work_logo_3.webp" type="image/webp" />
-              <img src="images/dist/work_logo_3.png" alt="" />
+              <source srcset="images/dist/work_3.webp" type="image/webp" />
+              <img src="images/dist/work_3.png" alt="work" />
             </picture>
           </div>
-          <div class="works__logo">
+          <div class="works__item">
             <picture>
-              <source srcset="images/dist/work_logo_4.webp" type="image/webp" />
-              <img src="images/dist/work_logo_4.png" alt="" />
+              <source srcset="images/dist/work_4.webp" type="image/webp" />
+              <img src="images/dist/work_4.png" alt="work" />
             </picture>
           </div>
-          <div class="works__logo">
+          <div class="works__item">
             <picture>
-              <source srcset="images/dist/work_logo_5.webp" type="image/webp" />
-              <img src="images/dist/work_logo_5.png" alt="" />
+              <source srcset="images/dist/work_5.webp" type="image/webp" />
+              <img src="images/dist/work_5.png" alt="work" />
             </picture>
           </div>
-          <div class="works__logo">
+          <div class="works__item">
             <picture>
-              <source srcset="images/dist/work_logo_6.webp" type="image/webp" />
-              <img src="images/dist/work_logo_6.png" alt="" />
+              <source srcset="images/dist/work_6.webp" type="image/webp" />
+              <img src="images/dist/work_6.png" alt="work" />
             </picture>
           </div>
         </div>
-        <div class="works__navbar__title">Online Store NOMAND</div>
-        <div class="works__navbar__link">
-          <img src="images/dist/navbar_arrow.png" alt="arrow to work" />
+        <div class="works__navbar">
+          <div class="works__logos">
+            <div class="works__logo">
+              <picture>
+                <source
+                  srcset="images/dist/work_logo_1.webp"
+                  type="image/webp"
+                />
+                <img src="images/dist/work_logo_1.png" alt="" />
+              </picture>
+            </div>
+            <div class="works__logo">
+              <picture>
+                <source
+                  srcset="images/dist/work_logo_2.webp"
+                  type="image/webp"
+                />
+                <img src="images/dist/work_logo_2.png" alt="" />
+              </picture>
+            </div>
+            <div class="works__logo">
+              <picture>
+                <source
+                  srcset="images/dist/work_logo_3.webp"
+                  type="image/webp"
+                />
+                <img src="images/dist/work_logo_3.png" alt="" />
+              </picture>
+            </div>
+            <div class="works__logo">
+              <picture>
+                <source
+                  srcset="images/dist/work_logo_4.webp"
+                  type="image/webp"
+                />
+                <img src="images/dist/work_logo_4.png" alt="" />
+              </picture>
+            </div>
+            <div class="works__logo">
+              <picture>
+                <source
+                  srcset="images/dist/work_logo_5.webp"
+                  type="image/webp"
+                />
+                <img src="images/dist/work_logo_5.png" alt="" />
+              </picture>
+            </div>
+            <div class="works__logo">
+              <picture>
+                <source
+                  srcset="images/dist/work_logo_6.webp"
+                  type="image/webp"
+                />
+                <img src="images/dist/work_logo_6.png" alt="" />
+              </picture>
+            </div>
+          </div>
+          <div class="works__navbar__title">Online Store NOMAND</div>
+          <div class="works__navbar__link">
+            <img src="images/dist/navbar_arrow.png" alt="arrow to work" />
+          </div>
+        </div>
+      </section>
+      <div class="sticky--spacer"></div>
+    </div> -->
+
+    <section class="works">
+      <div class="works__container">
+        <div id="works__item1" class="works__item" >
+          <picture
+            ><source srcset="images/dist/work_1.webp" type="image/webp" />
+            <img
+            id="works__img1"
+              class="works__img"
+              src="images/dist/work_1.png"
+              alt=""
+          /></picture>
+          <a class="works__link" href="#">
+            <div class="works-link__right">
+              <img class="works-link__icon" src="images/dist/work_logo_1.png" />
+              <div class="works-link__name">Project name</div>
+            </div>
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.42791 1.48007L21.643 1.47984L0.74795 22.3749L1.65305 23.28L22.5481 2.38494L22.5479 22.6L23.8279 22.5998V1.47984L23.8279 0.200036L22.5481 0.200037H1.42813L1.42791 1.48007Z"
+                fill="white"
+              ></path>
+            </svg>
+          </a>
+        </div>
+        <div id="works__item2" class="works__item">
+          <picture
+            ><source srcset="images/dist/work_2.webp" type="image/webp" />
+            <img class="works__img" src="images/dist/work_2.png" alt=""
+          /></picture>
+          <a class="works__link" href="#">
+            <div class="works-link__right">
+              <img class="works-link__icon" src="images/dist/work_logo_2.png" />
+              <div class="works-link__name">Project name</div>
+            </div>
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.42791 1.48007L21.643 1.47984L0.74795 22.3749L1.65305 23.28L22.5481 2.38494L22.5479 22.6L23.8279 22.5998V1.47984L23.8279 0.200036L22.5481 0.200037H1.42813L1.42791 1.48007Z"
+                fill="white"
+              ></path>
+            </svg>
+          </a>
+        </div>
+        <div id="works__item3" class="works__item">
+          <picture
+            ><source srcset="images/dist/work_3.webp" type="image/webp" />
+            <img class="works__img" src="images/dist/work_3.png" alt=""
+          /></picture>
+          <a class="works__link" href="#">
+            <div class="works-link__right">
+              <img class="works-link__icon" src="images/dist/work_logo_3.png" />
+              <div class="works-link__name">Project name</div>
+            </div>
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.42791 1.48007L21.643 1.47984L0.74795 22.3749L1.65305 23.28L22.5481 2.38494L22.5479 22.6L23.8279 22.5998V1.47984L23.8279 0.200036L22.5481 0.200037H1.42813L1.42791 1.48007Z"
+                fill="white"
+              ></path>
+            </svg>
+          </a>
+        </div>
+        <div id="works__item4" class="works__item">
+          <picture
+            ><source srcset="images/dist/work_4.webp" type="image/webp" />
+            <img class="works__img" src="images/dist/work_4.png" alt=""
+          /></picture>
+          <a class="works__link" href="#">
+            <div class="works-link__right">
+              <img class="works-link__icon" src="images/dist/work_logo_4.png" />
+              <div class="works-link__name">Project name</div>
+            </div>
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.42791 1.48007L21.643 1.47984L0.74795 22.3749L1.65305 23.28L22.5481 2.38494L22.5479 22.6L23.8279 22.5998V1.47984L23.8279 0.200036L22.5481 0.200037H1.42813L1.42791 1.48007Z"
+                fill="white"
+              ></path>
+            </svg>
+          </a>
+        </div>
+        <div id="works__item5" class="works__item">
+          <picture
+            ><source srcset="images/dist/work_5.webp" type="image/webp" />
+            <img class="works__img" src="images/dist/work_5.png" alt=""
+          /></picture>
+          <a class="works__link" href="#">
+            <div class="works-link__right">
+              <img class="works-link__icon" src="images/dist/work_logo_5.png" />
+              <div class="works-link__name">Project name</div>
+            </div>
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.42791 1.48007L21.643 1.47984L0.74795 22.3749L1.65305 23.28L22.5481 2.38494L22.5479 22.6L23.8279 22.5998V1.47984L23.8279 0.200036L22.5481 0.200037H1.42813L1.42791 1.48007Z"
+                fill="white"
+              ></path>
+            </svg>
+          </a>
         </div>
       </div>
     </section>
 
+    <!-- Brands -->
     <div class="sticky--container sl">
       <section class="brands section--full_height is--sticky">
         <div
@@ -383,6 +556,7 @@
       <div class="sticky--spacer sl"></div>
     </div>
 
+    <!-- Footer -->
     <footer class="footer">
       <div class="footer__wrapper">
         <div class="footer__content">
@@ -606,6 +780,7 @@
       </div>
     </footer>
 
+    <!-- Discuss -->
     <div class="discuss">
       <a href="#" class="footer__marquee" data-popup="contact">
         <div class="footer__marquee-wrap">
