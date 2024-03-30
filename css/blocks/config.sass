@@ -1,17 +1,5 @@
 // USER VARIABLES SECTION
-
-$fontsize: 16px // Body Font Size
-$textcolor: #000 // Text Color
-$lineheight: 1.65 // Document Line Height
-$userfont: roboto-oh5, sans-serif // User Font Family
-
-$white: #fff // White Color
-$black: #000 // Black Color
-$bg-main: #0C0C0C // Main Background Color
-$overlay-hero: #04211F // Hero Overlay Color
-$main-color: #ECFB5C // Main Color
-$primary-color: #ED4700 // Primary Color
-$secondary-color: #FCA311 // Secondary Color
+@import "./_variables"
 
 @mixin font($fname, $fstyle, $fweight, $furl)
 	@font-face
@@ -51,19 +39,30 @@ body
 	overflow-x: hidden
 
 section
-	background-color: $bg-main
+	// background-color: $bg-main
 	// height: 100vh
 	// width: 100%
 
 .btn
 	position: relative
 	text-transform: uppercase
-	padding: 15px 25px
+	padding: 15px 20px
 	border: 1px solid rgba($main-color, 0.1)
 	color: $white
 	background: none
 	font-size: 1rem // 16px
 	transition: all 0.5s ease
+	display: flex
+	align-items: center
+	gap: 4px
+	max-width: 200px
+	font-size: 14px
+	line-height: 20px
+	font-weight: 700
+
+	svg
+		width: 20px
+		height: 20px
 
 	&::before
 		content: ""
@@ -93,11 +92,64 @@ section
 		color: $black
 		z-index: 1
 
+		svg
+			transition: all 0.5s ease
+
 		&:hover
 			color: $white
+			svg
+				transform: rotate(45deg)
+				& *
+					fill: $white
 			&::before
 				width: 100%
 				z-index: -1
 
 		&::before
 			background-color: $primary-color
+
+			&:hover
+				color: $primary-color
+
+.arr-wrap
+	width: 100%
+	height: 100%
+	flex: none
+	position: relative
+	overflow: hidden
+	&-24
+		width: 24px
+		height: 24px
+
+	&-32
+		width: 32px
+		height: 32px
+
+	.arr-ic-main
+		width: 100%
+		height: 100%
+		position: absolute
+		top: 0%
+		bottom: auto
+		left: 0%
+		right: auto
+
+	.arr-ic-clone
+		width: 100%
+		height: 100%
+		position: absolute
+		top: 0%
+		bottom: auto
+		left: 0%
+		right: auto
+		transform: translate(-150%, 150%)
+
+.arr-hover
+	&:hover
+		.arr-ic-main
+			transform: translate(150%,-150%)
+			transition: transform .6s cubic-bezier(.4,0,.1,1)
+
+			.arr-ic-clone
+				transform: translate(0, 0)
+				transition: transform .6s cubic-bezier(.4,0,.1,1)

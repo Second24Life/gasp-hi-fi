@@ -14,11 +14,13 @@ function lenis() {
     touchMultiplier: 0.1,
     autoResize: true,
   });
+
   function raf(time) {
     lenis.raf(time);
     requestAnimationFrame(raf);
   }
   requestAnimationFrame(raf);
+
   function connectToScrollTrigger() {
     lenis.on("scroll", ScrollTrigger.update);
     gsap.ticker.add((time) => {
@@ -46,69 +48,73 @@ function pixel() {
 
 async function animDepixelate($el) {
   const $parent = $el.parentNode;
-  
-  $parent.classList.add('-pixelated')
 
-  const previousCanvas = $parent.querySelector('canvas')
-  if(previousCanvas) previousCanvas.remove();
+  $parent.classList.add("-pixelated");
+
+  const previousCanvas = $parent.querySelector("canvas");
+  if (previousCanvas) previousCanvas.remove();
 
   // add canvas
-  const canvas = document.createElement('canvas')
-  canvas.style.zIndex = 10
+  const canvas = document.createElement("canvas");
+  canvas.style.zIndex = 10;
+  canvas.style.position = "relative";
   $parent.appendChild(canvas);
   console.log(canvas);
-  const ctx = canvas.getContext('2d')
+  const ctx = canvas.getContext("2d", { willReadFrequently: true });
   console.log(ctx);
 
   // handle dimensions
-  const maxWidth = 128;
-  let w = $el.naturalWidth;
-  let h = $el.naturalHeight;
-  if(w > maxWidth) {
-      h = maxWidth*(h/w)
-      w = maxWidth
-  }
+  // const maxWidth = 280;
+  // let w = $el.naturalWidth;
+  // let h = $el.naturalHeight;
+  // if (w > maxWidth) {
+  //   h = maxWidth * (h / w);
+  //   w = maxWidth;
+  // }
+  const w = 280;
+  const h = 350;
 
   // do the thing
-  // const pixelate = async (sample_amount) => {
-  //     return new Promise(resolve => {
-  //         if(!canvas.parentNode) {
-  //             resolve()
-  //             return
-  //         }
+  const pixelate = async (sample_amount) => {
+      return new Promise(resolve => {
+          if(!canvas.parentNode) {
+              resolve()
+              return
+          }
 
-  //         const sample_size = Math.round(w/sample_amount)
+          const sample_size = Math.round(w/sample_amount)
 
-  //         ctx.canvas.width = w
-  //         ctx.canvas.height = h
-  //         ctx.drawImage($el, 0, 0, w, h);
+          ctx.canvas.width = w
+          ctx.canvas.height = h
+          // ctx.drawImage($el, 0, 0);
+          ctx.drawImage($el, 0, 0, w, h);
 
-  //         const pixelArr = ctx.getImageData(0, 0, w, h).data;
+          const pixelArr = ctx.getImageData(0, 0, w, h).data;
 
-  //         for (let y = 0; y < h; y += sample_size) {
-  //             for (let x = 0; x < w; x += sample_size) {
-  //                 const p = (x + (y*w)) * 4;
-  //                 ctx.fillStyle = "rgba(" + pixelArr[p] + "," + pixelArr[p + 1] + "," + pixelArr[p + 2] + "," + pixelArr[p + 3] + ")";
-  //                 ctx.fillRect(x, y, sample_size, sample_size);
-  //             }
-  //         }
+          for (let y = 0; y < h; y += sample_size) {
+              for (let x = 0; x < w; x += sample_size) {
+                  const p = (x + (y*w)) * 4;
+                  ctx.fillStyle = "rgba(" + pixelArr[p] + "," + pixelArr[p + 1] + "," + pixelArr[p + 2] + "," + pixelArr[p + 3] + ")";
+                  ctx.fillRect(x, y, sample_size, sample_size);
+              }
+          }
 
-  //         resolve()
-  //     })
-  // }
+          resolve()
+      })
+  }
 
   // // timeline
-  // const ITERATION_DELAY = 100;
-  // const delay = ms => new Promise(res => setTimeout(res, ms));
-  // await pixelate(8);
-  // await delay(ITERATION_DELAY);
-  // await pixelate(16);
-  // await delay(ITERATION_DELAY);
-  // await pixelate(32);
-  // await delay(ITERATION_DELAY);
-  // await pixelate(48);
-  // await delay(ITERATION_DELAY);
-  // await pixelate(96);
+  const ITERATION_DELAY = 1000;
+  const delay = ms => new Promise(res => setTimeout(res, ms));
+  await pixelate(8);
+  await delay(ITERATION_DELAY);
+  await pixelate(16);
+  await delay(ITERATION_DELAY);
+  await pixelate(32);
+  await delay(ITERATION_DELAY);
+  await pixelate(48);
+  await delay(ITERATION_DELAY);
+  await pixelate(96);
   // await delay(ITERATION_DELAY);
   // await pixelate(128);
   // await delay(ITERATION_DELAY);
@@ -117,13 +123,13 @@ async function animDepixelate($el) {
   // await pixelate(512);
   // await delay(ITERATION_DELAY);
 
-  setTimeout(() => {
-    canvas.remove();
-    $parent.classList.remove('-pixelated')
-  }, 1000);
+  // setTimeout(() => {
+  //   canvas.remove();
+  //   $parent.classList.remove("-pixelated");
+  // }, 1000);
   // remove canvas
-  // canvas.remove();
-  // $parent.classList.remove('-pixelated')
+  canvas.remove();
+  $parent.classList.remove('-pixelated')
 }
 
 function hero() {
@@ -238,9 +244,7 @@ function gallery() {
     );
 }
 
-function works() {
-  
-}
+function works() {}
 
 function brands() {
   const brands = document.querySelector(".brands");
@@ -248,9 +252,9 @@ function brands() {
   gsap.utils.toArray(".brands__items-col").forEach((column, index) => {
     const [y, yEnd] =
       index % 2
-        // ? ["100%", (brands.scrollHeight - column.offsetHeight) * -1]
-        ? ["100%", -300]
-        : [column.scrollHeight * -1, 0];
+        ? // ? ["100%", (brands.scrollHeight - column.offsetHeight) * -1]
+          ["100%", "-100%"]
+        : [column.scrollHeight * -1, "100%"];
 
     gsap.fromTo(
       column,
@@ -268,16 +272,36 @@ function brands() {
   });
 }
 
+function handleFooterCursor() {
+  const footerCursorWrap = document.querySelector(".footer__cursor");
+
+  let xTo = gsap.quickTo(".footer__cursor-main", "x", {
+      duration: 0.4,
+      ease: "power3",
+    }),
+    yTo = gsap.quickTo(".footer__cursor-main", "y", {
+      duration: 0.4,
+      ease: "power3",
+    });
+
+  document.addEventListener("mousemove", (e) => {
+    xTo(e.clientX);
+    yTo(e.clientY - footerCursorWrap.getBoundingClientRect().top);
+  });
+}
+
 document.addEventListener("DOMContentLoaded", (event) => {
   gsap.registerPlugin(ScrollTrigger);
+  
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 
   lenis();
   const element = document.querySelector(".hero__images");
   // console.log(element);
-  animDepixelate(element);
-//   const time = setTimeout(() => {
-//   }, 1000);
-// clearInterval(time);
+  setTimeout(() => {
+      animDepixelate(element);
+    }, 500);
+  // clearInterval(time);
   // Hero title animation
   // pixel();
   hero();
@@ -293,4 +317,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
   // Brands animation
   brands();
+
+  // Discuss
+  handleFooterCursor();
 });

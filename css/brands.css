@@ -4,6 +4,7 @@
   justify-content: space-around;
   overflow: hidden;
   position: relative;
+  background-color: #04211F;
 }
 .brands__overlay {
   position: absolute;

@@ -3,7 +3,8 @@
   --beige: #eff0df;
   --chocolate: #ff6b00;
   --light-grey: #d0d1c3;
-  --light-white: #545454;
+  --light-black: #212121;
+  --light-white: #BDB9B0;
   --dim-grey: #585650;
 }
 
@@ -153,7 +154,7 @@ img {
 
 .is--animated_text {
   position: absolute;
-  color: #fff;
+  color: var(--light-black);
 }
 
 .sticky--container {
@@ -378,6 +379,10 @@ img {
 
 .is--tranparent {
   background: transparent;
+}
+
+.section--full_height.is--tranparent {
+  z-index: -1;
 }
 
 .team--members_list {

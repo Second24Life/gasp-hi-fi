@@ -5,6 +5,7 @@
   perspective: 1500px;
   position: relative;
   z-index: 10;
+  background-color: #FFF9EC;
 }
 .gallery__items {
   display: grid;
